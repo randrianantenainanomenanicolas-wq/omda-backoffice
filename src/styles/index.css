@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-omda-warmGray font-sans text-omda-black antialiased; }
+  h1 { @apply tracking-tight; }
+  :focus-visible { @apply outline-none ring-2 ring-omda-green/40 ring-offset-1 ring-offset-omda-warmGray; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible { @apply ring-0 ring-offset-0; }
+}
+
+/* Squelette de chargement : même gabarit que le contenu final, sans saut de mise en page. */
+.skeleton {
+  background: linear-gradient(90deg, #ECE9DF 25%, #F7F5EF 50%, #ECE9DF 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton, .animate-progress { animation: none; }
+}
